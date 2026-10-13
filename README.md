@@ -6,6 +6,7 @@
 
 - [连续滚动互动讲义](https://xzwu-ui.github.io/fuzzy-decomposition-slides/)
 - [八页翻页演示](https://xzwu-ui.github.io/fuzzy-decomposition-slides/presentation.html)
+- [数学论文式报告](https://xzwu-ui.github.io/fuzzy-decomposition-slides/#report)
 - [GitHub 源码仓库](https://github.com/xzwu-ui/fuzzy-decomposition-slides)
 
 网页通过 GitHub Pages 公开访问。修改源码并推送到 `main` 后，GitHub Actions 会先运行数学检查、重新生成两种单文件版，再自动部署网页。
@@ -14,9 +15,9 @@
 
 ## 连续滚动的网页版讲义
 
-双击 **`web.html`** 即可打开互动讲义。它将原有内容组织成六个连续章节，提供跟随阅读的目录、阅读进度、完整证明、可操作的截集与集合恢复演示，以及中点见证探索器。桌面显示左侧目录；手机点击顶部“目录”跳转章节。顶部可进入演示版，也可以打印讲义。
+双击 **`web.html`** 即可打开互动讲义。它将原有内容组织成六个连续章节，提供跟随阅读的目录、阅读进度、完整证明、可操作的截集与集合恢复演示，以及中点见证探索器。第 07 章提供对应的 14 页数学论文式报告，可在新标签页阅读 PDF。桌面显示左侧目录；手机点击顶部“目录”跳转章节。顶部可进入演示版、跳转报告，也可以打印讲义。
 
-**`web-standalone.html`** 是完全自包含的讲义版本，复制这个文件即可在另一台电脑离线阅读和操作。顶部“演示版”链接需要同目录中的 `index.html` 及其资源；讲义本身没有外部运行依赖。
+**`web-standalone.html`** 是完全自包含的讲义版本，复制这个文件即可在另一台电脑离线阅读和操作。顶部“演示版”链接需要同目录中的 `index.html` 及其资源；报告链接需要保留同目录下 `reports/` 中的 PDF 文件。讲义交互没有外部运行依赖。
 
 网页版单独使用 `css/web.css` 和 `js/web.js`，共享原有数学计算与图形模块。原有 `index.html` 与 `standalone.html` 继续作为翻页演示入口。
 

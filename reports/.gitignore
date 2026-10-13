@@ -1,0 +1,11 @@
+qa/
+tmp/
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+# Local delivery copies; the website uses the English filenames.
+/模糊集广义分解定理中的截集恢复及其有限重构.pdf
+/模糊集广义分解定理中的截集恢复及其有限重构.docx
+/fuzzy-cut-report.docx

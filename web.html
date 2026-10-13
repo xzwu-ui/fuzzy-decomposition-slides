@@ -18,7 +18,7 @@
   <a class="skip-link" href="#lecture">跳到讲义正文</a>
   <header class="site-header">
     <a class="wordmark" href="#top" aria-label="回到讲义开头"><span class="brand-symbol" aria-hidden="true">μ</span><span>系统数学<span class="brand-divider">/</span><span class="brand-detail">互动讲义</span></span></a>
-    <div class="header-actions"><a class="presentation-link" href="index.html">演示版 <span aria-hidden="true">↗</span></a><button id="print-lecture" class="quiet-button">打印讲义</button><button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="chapter-nav">目录 <span aria-hidden="true">☰</span></button></div>
+    <div class="header-actions"><a class="report-link" href="#report">论文报告</a><a class="presentation-link" href="index.html">演示版 <span aria-hidden="true">↗</span></a><button id="print-lecture" class="quiet-button">打印讲义</button><button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="chapter-nav">目录 <span aria-hidden="true">☰</span></button></div>
   </header>
   <div class="reading-track" aria-hidden="true"><div id="reading-progress"></div></div>
   <div class="page-layout">
@@ -31,6 +31,7 @@
         <a href="#proof"><span>04</span>把直观变成证明<i aria-hidden="true">↗</i></a>
         <a href="#example"><span>05</span>六元素数值例子<i aria-hidden="true">↗</i></a>
         <a href="#takeaway"><span>06</span>端点与要点回顾<i aria-hidden="true">↗</i></a>
+        <a href="#report"><span>07</span>数学论文式报告<i aria-hidden="true">↗</i></a>
       </nav>
       <div class="sidebar-note"><span class="small-label">READ & EXPLORE</span><p>读一段，动一下。<br>让集合运算变得看得见。</p><div class="reading-status"><span id="reading-percent">0%</span><span>阅读进度</span></div></div>
       <a class="sidebar-back" href="#top">回到开头 ↑</a>
@@ -39,7 +40,7 @@
       <section class="hero" aria-labelledby="lecture-title">
         <div class="hero-copy"><p class="hero-kicker">FUZZY SETS · 第 3 章</p><h1 id="lecture-title">从模糊<br>到<span>清晰。</span></h1><p class="hero-subtitle">广义分解定理中的截集恢复</p><p class="hero-description">边界的选择可以不确定。<br>为什么恢复出来的截集，仍然确定？</p><a class="start-link" href="#cuts">开始探索 <span aria-hidden="true">↓</span></a></div>
         <div class="hero-figure"><div class="figure-heading"><span>一条曲线，许多清晰集合</span><span class="figure-index">FIG. 01</span></div><svg id="intro-plot" viewBox="0 0 900 650" role="img" aria-label="三角形隶属函数在不同高度截出的清晰集合"></svg><div class="hero-figure-footer"><span>隶属度 μ<sub>A</sub>(x)</span><span>阈值 λ ∈ [0, 1]</span></div></div>
-        <div class="hero-meta"><span>定理 3.7 · 第（3）条</span><span>6 个章节 · 5 组互动</span><span>可离线阅读</span></div>
+        <div class="hero-meta"><span>定理 3.7 · 第（3）条</span><span>6 个讲义章节 · 5 组互动</span><span>附 14 页数学报告</span></div>
       </section>
 
       <div class="lecture-intro"><span class="intro-mark" aria-hidden="true">∩<br>∪</span><div><h2>先看边界，再看结构。</h2><p>从一条隶属曲线出发，理解普通截集与强截集的区别；然后允许集合族 H 在边界处自由选择，观察它如何通过交集和并集恢复原来的截集。最后，用逐元素的证明解释这一切。</p></div></div>
@@ -94,6 +95,23 @@
         <div class="summary-grid"><div class="summary-card teal"><div id="summary-left" class="mirror-motion" aria-hidden="true"></div><h3>从下方逼近</h3><div data-math="A_\lambda=\bigcap_{\alpha<\lambda}H(\alpha)"></div><p>取交集 · 恢复普通截集 ≥</p><small>0 &lt; λ ≤ 1</small></div><div class="summary-card blue"><div id="summary-right" class="mirror-motion" aria-hidden="true"></div><h3>从上方逼近</h3><div data-math="A_\lambda^+=\bigcup_{\alpha>\lambda}H(\alpha)"></div><p>取并集 · 恢复强截集 &gt;</p><small>0 ≤ λ &lt; 1</small></div></div>
         <div class="questions"><details open><summary>为什么课件排除 λ = 0 或 λ = 1？</summary><div><p>所有索引 α 都属于 [0, 1]。当 λ = 0 时，没有 α &lt; 0；当 λ = 1 时，没有 α &gt; 1，因此相应索引族为空。</p><p>若采用集合论约定 ∩∅ = X、∪∅ = ∅，两式可以延伸到这些端点，因为 A<sub>0</sub> = X、A<sub>1</sub><sup>+</sup> = ∅。这里保留课件的原始范围；端点限制并非等式失效的反例。</p></div></details><details><summary>H(α) 必须等于某一种截集吗？</summary><div><p>不必。严格高于 α 的元素必须包含，严格低于 α 的元素必须排除；恰好等于 α 的元素可以分别选择。因此当有多个临界元素时，H(α) 可以是位于两种截集之间的其他集合。</p></div></details><details><summary>动画里算出相同结果，就已经证明了吗？</summary><div><p>有限采样只能提供直观。对有限论域，可以为每个需要排除或找回的元素构造中点见证，用有限组阈值精确验证。对一般论域的结论，则由第 04 节的四个包含方向证明保证。</p></div></details></div>
         <div class="closing-note"><span class="small-label">THE IDEA TO TAKE AWAY</span><p>边界可以自由选择，<br><strong>截集的结构依然完整。</strong></p></div>
+      </section>
+      <section class="chapter report-section" id="report" aria-labelledby="report-title">
+        <div class="chapter-heading"><span class="chapter-number">07</span><div><p class="section-kicker">READ THE FULL REPORT</p><h2 id="report-title">把讲义展开为完整的数学报告</h2></div></div>
+        <p class="chapter-lead">以截集恢复定理为核心，将互动讲义中的直观解释展开为严格的数学论述，并进一步讨论稠密阈值恢复、有限证书和单阈值精确重构。</p>
+        <article class="report-card" aria-labelledby="report-name">
+          <div class="report-cover" aria-hidden="true"><span>MATHEMATICAL<br>REPORT</span><div>∩<br>∪</div><small>PDF · 14 PAGES</small></div>
+          <div class="report-content">
+            <p class="small-label teal">中文数学论文式报告</p>
+            <h3 id="report-name">模糊集广义分解定理中的<br>截集恢复及其有限重构</h3>
+            <p class="report-description">中英文摘要、完整定理证明、拓展推论、数值实例、采样反例与参考文献。对应本讲内容，可用于深入阅读、课程报告和打印。</p>
+            <ul class="report-facts" aria-label="报告内容"><li>9 节正文 · 2 个附录</li><li>2 幅数学图 · 4 张表</li><li>完整证明与补充推论</li></ul>
+            <div class="report-actions">
+              <a class="report-action primary" href="reports/fuzzy-cut-report.pdf" target="_blank" rel="noopener" aria-label="在新标签页阅读 14 页 PDF 报告">阅读 PDF <span aria-hidden="true">↗</span></a>
+            </div>
+            <p class="report-note">在新标签页打开 14 页 PDF，使用浏览器的 PDF 阅读器查看。</p>
+          </div>
+        </article>
       </section>
       <footer class="lecture-footer"><div><strong>从模糊到清晰</strong><p>依据本项目课件讲解内容整理 · 定理 3.7 第（3）条</p><p>定义及定理：课件第 30、32–35 页；证明：第 37 页；例 3.1：第 41 页。</p></div><a href="#top">回到开头 ↑</a></footer>
     </main>

@@ -1,5 +1,6 @@
 """Build the lecture and presentation for GitHub Pages; standard library only."""
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 
@@ -22,4 +23,8 @@ licenses = site / 'licenses'
 licenses.mkdir(exist_ok=True)
 (licenses / 'katex.txt').write_bytes((root / 'assets' / 'vendor' / 'katex' / 'LICENSE').read_bytes())
 (licenses / 'fonts.txt').write_bytes((root / 'assets' / 'FONT-LICENSE.txt').read_bytes())
-print('Built GitHub Pages: lecture homepage, presentation and offline versions.')
+reports = site / 'reports'
+reports.mkdir(exist_ok=True)
+for name in ['fuzzy-cut-report.pdf']:
+    shutil.copyfile(root / 'reports' / name, reports / name)
+print('Built GitHub Pages: lecture homepage, presentation, offline versions and report files.')

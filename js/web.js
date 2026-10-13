@@ -75,6 +75,7 @@
     const marker = Math.max(140, window.innerHeight * 0.24);
     let active = null;
     chapters.forEach(chapter => { if (chapter.getBoundingClientRect().top <= marker) active = chapter.id; });
+    if (height > 0 && window.scrollY >= height - 2) active = chapters[chapters.length - 1]?.id;
     links.forEach(link => {
       const selected = link.hash === '#' + active;
       link.classList.toggle('active', selected);
