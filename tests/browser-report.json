@@ -1,0 +1,89 @@
+{
+  "slides": [
+    {
+      "page": 0,
+      "overflow": [],
+      "mathOverflow": []
+    },
+    {
+      "page": 1,
+      "overflow": [],
+      "mathOverflow": []
+    },
+    {
+      "page": 2,
+      "overflow": [],
+      "mathOverflow": []
+    },
+    {
+      "page": 3,
+      "overflow": [],
+      "mathOverflow": []
+    },
+    {
+      "page": 4,
+      "overflow": [],
+      "mathOverflow": []
+    },
+    {
+      "page": 5,
+      "overflow": [],
+      "mathOverflow": []
+    },
+    {
+      "page": 6,
+      "overflow": [],
+      "mathOverflow": []
+    },
+    {
+      "page": 7,
+      "overflow": [],
+      "mathOverflow": []
+    }
+  ],
+  "operations": [
+    "keyboard and intro fragments",
+    "lambda slider, SVG drag, open/closed endpoints, play/pause/reset",
+    "all visible H boundary toggles remain legal",
+    "left/right genuine operations, progression, pause freeze, replay, exact certificate, page reset",
+    "four proof directions and final conclusion appear progressively",
+    "course values, c boundary invariance, exact intersection/union, left/right playback/reset",
+    "notes, timer, fullscreen, blank-screen click"
+  ],
+  "resolutions": [
+    {
+      "width": 2560,
+      "height": 1440,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 2560,
+        "height": 1440
+      }
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "stage": {
+        "x": 0.33331298828125,
+        "y": 0,
+        "width": 1365.3334350585938,
+        "height": 768
+      }
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "stage": {
+        "x": 0,
+        "y": 40,
+        "width": 1280,
+        "height": 720
+      }
+    }
+  ],
+  "errors": [],
+  "requests": [],
+  "fullscreen": true,
+  "fullscreen_followup": "Focused verification after awaiting API completion: enter=true, exit=true, viewport=1920x1080."
+}

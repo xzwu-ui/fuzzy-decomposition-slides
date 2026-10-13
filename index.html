@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>从模糊到清晰 · 广义分解定理（3）</title>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css"><link rel="stylesheet" href="css/style.css">
+<script defer src="assets/vendor/katex/katex.min.js"></script><script defer src="js/fuzzy-set.js"></script><script defer src="js/alpha-cut.js"></script><script defer src="js/theorem-animation.js"></script><script defer src="js/speaker-notes.js"></script><script defer src="js/slides.js"></script></head>
+<body><div id="viewport"><main id="deck" aria-label="8页数学课堂幻灯片">
+<section class="slide active" data-title="问题引入" data-duration="25" data-source="课件第26、33、35页">
+<div class="eyebrow">系统数学 / 模糊集理论 <span>01 · 提出问题</span></div>
+<div class="hero-grid"><div><h1>从模糊到清晰</h1><h2 class="hero-sub">广义分解定理中的<br>截集恢复</h2><p class="lead">如何仅通过集合族 <span data-math="H(\alpha)"></span>，<br>恢复一个模糊集的截集？</p><div class="tag">定理 3.7 · 第（3）条 · 7分钟</div></div><div class="hero-visual"><svg id="intro-plot" viewBox="0 0 900 650" aria-label="模糊隶属函数及不同高度截集"></svg><p class="caption">一条隶属曲线，许多清晰的截集。</p></div></div>
+<div class="reveal hero-question" data-step="2"><span class="accent">核心问题</span> 临界元素可选，为什么恢复结果仍然确定？</div>
+</section>
+<section class="slide" data-title="截集与边界" data-duration="45" data-source="课件第30、32–35页；截集定义回顾">
+<div class="eyebrow">先建立共同语言 <span>02 · 截集与边界</span></div><h2>一条阈值线，两种边界规则</h2>
+<div class="two-col cut-layout"><div class="panel"><svg id="cut-plot" viewBox="0 0 1050 570" aria-label="可拖动阈值的连续隶属函数"></svg><div class="range-row"><label for="lambda-slider">阈值 λ</label><input id="lambda-slider" type="range" min="0" max="1000" value="600" step="1"><output id="lambda-value">0.6</output></div><div class="button-row"><button id="cut-normal" class="selected">普通截集 ≥</button><button id="cut-strong">强截集 &gt;</button><button id="cut-sweep">播放阈值</button><button id="cut-reset">重置</button></div></div>
+<div class="definition-column"><div class="formula-card" data-math="A_\lambda=\{x\in X:\mu_A(x)\ge\lambda\}"></div><div class="formula-card blue" data-math="A_\lambda^+=\{x\in X:\mu_A(x)>\lambda\}"></div><div class="boundary-callout"><div class="legend"><span class="dot solid"></span>实心：属于 <span class="dot hollow"></span>空心：不属于</div><p>唯一差别发生在<br><span data-math="\mu_A(x)=\lambda"></span></p><p id="cut-description" class="accent"></p><div id="cut-interval" data-math=""></div></div><p class="caption">拖动滑块或图中的水平线。<br><span data-math="\mu_A:X\to[0,1]"></span><br>教学曲线：<span data-math="\mu_A(x)=1-|x-2|/2, X=[0,4]"></span></p></div></div>
+</section>
+<section class="slide" data-title="H 的夹逼条件" data-duration="60" data-source="课件第35页 · 定理3.7的条件">
+<div class="eyebrow">不确定性只在边界 <span>03 · 合法的集合族</span></div><h2>H(α) 可以自由选择什么？</h2>
+<div class="theorem-condition"><span data-math="H:[0,1]\to\mathcal P(X),\qquad A_\alpha^+\subseteq H(\alpha)\subseteq A_\alpha"></span></div>
+<div class="three-condition"><div><span class="pill teal">必须包含</span><span data-math="\mu_A(x)>\alpha"></span></div><div><span class="pill amber">边界可选</span><span data-math="\mu_A(x)=\alpha"></span></div><div><span class="pill muted">必须排除</span><span data-math="\mu_A(x)<\alpha"></span></div></div>
+<div class="h-demo panel"><div class="demo-heading"><div><strong>四元素教学例</strong><p>专门构造，非课件例3.1 · μ = (0.90, 0.60, 0.60, 0.20)</p></div><label>α = <select id="h-level"><option value="600">0.60</option><option value="900">0.90</option><option value="200">0.20</option></select></label></div><div id="h-cards" class="element-cards"></div><div id="h-sets" class="h-set-row"></div></div>
+<div class="bottom-insight"><span id="h-verdict"></span><span class="caption">选择会带入后续动画；在每个元素自己的临界高度处生效。</span></div>
+</section>
+<section class="slide" data-title="普通截集恢复" data-duration="75" data-source="课件第35、37页 · 第（3）条第一式">
+<div class="eyebrow">所有下方集合都要通过 <span>04 · 左侧逼近 / 交集</span></div><h2>从下方逼近，边界元素始终留下</h2>
+<div class="main-formula teal" data-math="\boxed{A_\lambda=\bigcap_{\alpha<\lambda}H(\alpha)},\qquad 0<\lambda\le1"></div>
+<div id="left-animation" class="animation-host" data-side="left"></div>
+</section>
+<section class="slide" data-title="强截集恢复" data-duration="75" data-source="课件第35、37页 · 第（3）条第二式（补全证明）">
+<div class="eyebrow">找到一个上方集合就够了 <span>05 · 右侧逼近 / 并集</span></div><h2>从上方逼近，严格更高的元素被找回</h2>
+<div class="main-formula blue" data-math="\boxed{A_\lambda^+=\bigcup_{\alpha>\lambda}H(\alpha)},\qquad 0\le\lambda<1"></div>
+<div id="right-animation" class="animation-host" data-side="right"></div>
+</section>
+<section class="slide" data-title="严格数学证明" data-duration="75" data-source="课件第37页；逐元素证明及强截集证明补全">
+<div class="eyebrow">直观之后，落实每个量词 <span>06 · 双向包含证明</span></div><h2>“任意 α”与“存在 α”决定了交、并</h2>
+<div class="proof-grid"><div class="proof-column"><div class="proof-title teal">普通截集 · ∀ α &lt; λ</div>
+<div class="proof-step reveal" data-step="1"><h3>① 普通截集 ⊆ 交集</h3><div data-math="x\in A_\lambda\Rightarrow\mu_A(x)\ge\lambda>\alpha"></div><div data-math="\Rightarrow x\in A_\alpha^+\subseteq H(\alpha)"></div><p>对任意 α &lt; λ 都成立，所以属于交集。</p></div>
+<div class="proof-step reveal" data-step="2"><h3>② 交集 ⊆ 普通截集</h3><p>若 μ<sub>A</sub>(x) &lt; λ，取中点</p><div data-math="\alpha=\frac{\mu_A(x)+\lambda}{2},\quad\mu_A(x)<\alpha<\lambda"></div><div data-math="x\notin A_\alpha\Rightarrow x\notin H(\alpha)"></div><p>一个下方集合就能排除它，故不属于交集。</p></div></div>
+<div class="proof-column"><div class="proof-title blue">强截集 · ∃ α &gt; λ</div>
+<div class="proof-step reveal" data-step="3"><h3>③ 强截集 ⊆ 并集</h3><p>若 μ<sub>A</sub>(x) &gt; λ，取中点</p><div data-math="\alpha=\frac{\lambda+\mu_A(x)}{2},\quad\lambda<\alpha<\mu_A(x)"></div><div data-math="x\in A_\alpha^+\subseteq H(\alpha)"></div><p>存在一个上方集合包含它，所以属于并集。</p></div>
+<div class="proof-step reveal" data-step="4"><h3>④ 并集 ⊆ 强截集</h3><p>若 x 属于并集，存在 α &gt; λ，使得</p><div data-math="x\in H(\alpha)\subseteq A_\alpha"></div><div data-math="\Rightarrow\mu_A(x)\ge\alpha>\lambda\Rightarrow x\in A_\lambda^+"></div><p>“严格更高”被 α &gt; λ 保证。</p></div></div></div>
+<div class="proof-conclusion reveal" data-step="5"><span data-math="A_\lambda=\bigcap_{\alpha<\lambda}H(\alpha),\qquad A_\lambda^+=\bigcup_{\alpha>\lambda}H(\alpha)"></span><span>中点处是严格不等式，H 的边界选择无法改变证明。</span></div>
+</section>
+<section class="slide" data-title="例3.1与端点" data-duration="45" data-source="课件第35、41页 · 六元素例3.1">
+<div class="eyebrow">回到课件中的真实数据 <span>07 · 数值验证 / 端点</span></div><h2>λ = 0.76：c 留在交集，却不进入并集</h2>
+<div class="case-grid"><div class="panel case-panel"><div class="case-meta"><span data-math="X=\{a,b,c,d,e,f\}"></span><span>μ = (1, 0.95, 0.76, 0.65, 0.30, 0)</span></div><svg id="case-plot" viewBox="0 0 1050 440" aria-label="课件六元素例3.1隶属度"></svg><div class="button-row"><button id="case-left">从左侧逼近</button><button id="case-right">从右侧逼近</button><button id="case-intersection">显示交集</button><button id="case-union">显示并集</button><button id="case-reset">重置</button></div><div id="case-status" class="case-status">点击左右逼近，观察真实集合运算。</div></div>
+<div class="case-result"><div class="formula-card teal" data-math="A_{0.76}=\{a,b,c\}"></div><div class="formula-card blue" data-math="A_{0.76}^+=\{a,b\}"></div><div class="case-boundary"><strong>c 在 α = 0.76 的边界选择</strong><label><input id="case-boundary" type="checkbox"> 将 c 加入 H(0.76)</label><div id="case-h"></div><p>两个恢复式均不取 α = λ，<br>勾选与否不影响结果。</p></div></div></div>
+<div class="endpoint-note reveal" data-step="1"><strong>为什么课件排除端点？</strong><span>λ = 0 时无 α &lt; 0；λ = 1 时无 α &gt; 1。<br>若约定空交 = X、空并 = ∅，则两式可延伸；本汇报保留课件范围。</span></div>
+</section>
+<section class="slide" data-title="总结" data-duration="20" data-source="课件第35–38页 · 第（3）条的意义">
+<div class="eyebrow">不确定的边界，确定的结构 <span>08 · 带走这个思想</span></div><h2>截集结构被完整保留</h2>
+<div class="summary-grid"><div class="summary-card teal"><div class="mirror-motion" id="summary-left"></div><div class="summary-label">从下方逼近</div><div data-math="\alpha<\lambda\quad\longrightarrow\quad\bigcap"></div><div class="summary-result" data-math="\boxed{A_\lambda=\bigcap_{\alpha<\lambda}H(\alpha)}"></div><p>取交集 · 恢复普通截集 ≥</p><small>λ ≠ 0</small></div><div class="summary-card blue"><div class="mirror-motion" id="summary-right"></div><div class="summary-label">从上方逼近</div><div data-math="\alpha>\lambda\quad\longrightarrow\quad\bigcup"></div><div class="summary-result" data-math="\boxed{A_\lambda^+=\bigcup_{\alpha>\lambda}H(\alpha)}"></div><p>取并集 · 恢复强截集 &gt;</p><small>λ ≠ 1</small></div></div>
+<p class="closing reveal" data-step="1">满足夹逼条件的集合族，能够精确保留并恢复<br><strong>模糊集的截集结构。</strong></p>
+</section>
+<footer id="footer"><div class="footer-brand">FUZZY SETS <span id="source-label"></span></div><nav><button id="prev" aria-label="上一页">←</button><span id="counter">01 / 08</span><button id="next" aria-label="推进一步">推进 / 空格 →</button><button id="pause" title="P 暂停或继续">暂停</button><button id="replay" title="R 重播本页">重播</button><button id="notes-toggle" title="N 讲稿">讲稿</button><button id="timer-toggle" title="T 排练计时">计时</button><button id="fullscreen" title="F 全屏">全屏</button></nav><div id="timer">00:00 / 07:00</div></footer><div class="progress-track"><div id="progress"></div></div>
+<aside id="notes-panel" hidden><div class="notes-head"><strong id="notes-title"></strong><button id="notes-close">关闭 ×</button></div><div id="notes-body"></div></aside>
+<div id="help" hidden><h3>演示快捷键</h3><p>→ / 空格 / 点击空白：推进一步<br>←：上一页　↑ / ↓：上一页 / 下一页<br>P：暂停动画　R：本页重播<br>N：讲稿　T：排练计时　F：全屏<br>数字 1–8：直接跳页　?：帮助　Esc：关闭面板</p></div>
+</main></div><div id="loading">正在载入离线数学演示…</div></body></html>

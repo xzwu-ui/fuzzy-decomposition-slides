@@ -1,0 +1,20 @@
+# Local hosting checkout and generated deployment output
+website/
+_site/
+
+# Local browser captures and runtime files
+tests/qa-web/
+tests/qa/
+node_modules/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+.agents/
+.codex/
+.aws/
+
+# Helpers for the separate private hosting checkout
+tools/prepare-website.py
+tools/package-website.py

@@ -1,0 +1,40 @@
+{
+  "operations": [
+    "ordinary/strong cuts, peak endpoint, SVG drag, reset, accessible pressed states",
+    "H boundary choices and critical-level selection remain legal",
+    "both recovery results, exact certificates, playback, pause freeze and pause on leaving view",
+    "midpoint witnesses, exact half-thousandth labels, equality and empty-index endpoints",
+    "six-element case and c boundary invariance",
+    "five responsive sizes, mobile directory and reading progress",
+    "offline standalone lecture and independent original slide entry"
+  ],
+  "layouts": [
+    {
+      "width": 1440,
+      "scrollWidth": 1425,
+      "mathOverflow": []
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1009,
+      "mathOverflow": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 753,
+      "mathOverflow": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "mathOverflow": []
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "mathOverflow": []
+    }
+  ],
+  "errors": [],
+  "requests": []
+}
